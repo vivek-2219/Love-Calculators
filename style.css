@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+}
+
+.navigation {
+    background-color: rgb(129 37 55);
+    color: white;
+    padding: 12px;
+}
+
+.container {
+    padding: 23px 0px;
+    width: 100vw;
+    background: url('./background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.names {
+    display: flex;
+    margin: auto;
+    width: 840px;
+}
+
+.person {
+    margin: 12px;
+}
+
+.person1,
+.person2 {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 6px;
+    width: 345px;
+}
+
+.loves {
+    margin: 18px 12px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn :hover {
+    background-color: rgb(129 37 55);
+    color: white;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 6px 23px;
+    background-color: rgb(240, 84, 84);
+    color: white;
+}
+
+.outputContainer {
+    width: 100vw;
+    height: calc(100vh - 258px);
+}
+
+.footer {
+    background-color: rgb(129 37 55);
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
