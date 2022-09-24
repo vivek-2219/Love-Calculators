@@ -7,6 +7,7 @@ let image = document.querySelector('.image');
 let loading = document.querySelector('.loading');
 let loadingGif = document.querySelector('.loadingGif');
 let reset = document.querySelector('.reset');
+let backgroundImage = document.querySelector('.backgroundImage');
 
 // Love calculating function.
 function loveCalculator() {
@@ -27,7 +28,6 @@ function loveCalculator() {
     loveNumber = loveNumber + charCount;
     charCount = 0;
   };
-  console.log(loveNumber);
 
   // Calculating the love percentage.
   calculatingFunction(loveNumber, 1);
@@ -35,7 +35,7 @@ function loveCalculator() {
 
 // Logic to display the percentage calculated by the Love Calculator.
 button.addEventListener('click', () => {
-  image.style.opacity = 0.7;
+  // image.style.opacity = 0.7;
   loadingGif.style.display = 'block';
   loading.style.display = 'flex';
   output.style.display = 'none';
@@ -81,12 +81,13 @@ function calculatingFunction(loveNum, multiplyer) {
 };
 
 // Logic for Reset button.
-reset.addEventListener('click', ()=>{
+reset.addEventListener('click', () => {
   output.innerHTML = '';
-  image.style.opacity = 2;
+  // image.style.opacity = 2;
   loadingGif.style.display = 'none';
   loading.style.display = 'none';
   output.style.display = 'none';
 });
+
 
 
