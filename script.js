@@ -2,6 +2,10 @@
 let person1 = document.querySelector('.person1');
 let person2 = document.querySelector('.person2');
 let button = document.querySelector('.button');
+let output = document.querySelector('.output');
+let image = document.querySelector('.image');
+let loading = document.querySelector('.loading');
+let loadingGif = document.querySelector('.loadingGif');
 
 // Love calculating function.
 function loveCalculator() {
@@ -25,16 +29,26 @@ function loveCalculator() {
   console.log(loveNumber);
 
   // Calculating the love percentage.
-  calculatingFunction(loveNumber, loveNumber);
+  calculatingFunction(loveNumber, 1);
 };
 
 // Logic to display the percentage calculated by the Love Calculator.
 button.addEventListener('click', () => {
-  loveCalculator();
+  image.style.opacity = 0.7;
+  loadingGif.style.display = 'block';
+  loading.style.display = 'flex';
+
+  // Delaying for the calculation of love.
+  setTimeout(() => {
+    loadingGif.style.display = 'none';
+    loading.style.display = 'none';
+    loveCalculator();
+  }, 2000);
 });
 
 // Function to reduce the loveNumber to a 2-digit number.
 function calculatingFunction(loveNum, multiplyer) {
+  // Performing the calculaiton till a valid result comes out.
   for (let i = 0; i < multiplyer; i++) {
     let firstNum = '';
     let loveArray = [];
@@ -45,10 +59,17 @@ function calculatingFunction(loveNum, multiplyer) {
     for (let i = 0; i < loveArray.length; i++) {
       firstNum += String(loveArray[i]);
     };
+
+    // Increasing the value of multiplyer if result is not valid.
+    if (String(firstNum).length !== 2) {
+      multiplyer = multiplyer + 1;
+    };
+
     loveNum = firstNum;
   };
-  console.log(loveNum);
-  return loveNum;
+
+  // Showing the output
+  output.innerHTML = `Love for ${person2.value} is ${loveNum}%`;
 };
 
 
