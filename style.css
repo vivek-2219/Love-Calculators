@@ -34,6 +34,7 @@
 
 .names {
     display: flex;
+    justify-content: center;
     margin: auto;
     width: 840px;
 }
@@ -66,10 +67,11 @@
     cursor: pointer;
 }
 
-.button {
+.operators {
     border: 1px solid black;
     border-radius: 5px;
     padding: 6px 23px;
+    margin: 0px 12px;
     background-color: rgb(240, 84, 84);
     color: white;
 }
@@ -131,4 +133,11 @@
     padding: 12px;
     text-align: center;
 }
+
+/* Media Queries */
+@media screen and (max-width: 900px) {
+    .person1, .person2 {
+        width: 223px;
+    };
+};
 

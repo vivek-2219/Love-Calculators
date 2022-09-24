@@ -6,6 +6,7 @@ let output = document.querySelector('.output');
 let image = document.querySelector('.image');
 let loading = document.querySelector('.loading');
 let loadingGif = document.querySelector('.loadingGif');
+let reset = document.querySelector('.reset');
 
 // Love calculating function.
 function loveCalculator() {
@@ -37,11 +38,13 @@ button.addEventListener('click', () => {
   image.style.opacity = 0.7;
   loadingGif.style.display = 'block';
   loading.style.display = 'flex';
+  output.style.display = 'none';
 
   // Delaying for the calculation of love.
   setTimeout(() => {
     loadingGif.style.display = 'none';
     loading.style.display = 'none';
+    output.style.display = 'flex';
     loveCalculator();
   }, 2000);
 });
@@ -65,11 +68,25 @@ function calculatingFunction(loveNum, multiplyer) {
       multiplyer = multiplyer + 1;
     };
 
+    // Increasing the value of love percentage when it is less than 50%.
+    if (firstNum < 50) {
+      firstNum = firstNum + 45;
+    };
+
     loveNum = firstNum;
   };
 
   // Showing the output
   output.innerHTML = `Love for ${person2.value} is ${loveNum}%`;
 };
+
+// Logic for Reset button.
+reset.addEventListener('click', ()=>{
+  output.innerHTML = '';
+  image.style.opacity = 2;
+  loadingGif.style.display = 'none';
+  loading.style.display = 'none';
+  output.style.display = 'none';
+});
 
 
