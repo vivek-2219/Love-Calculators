@@ -68,12 +68,12 @@ function calculatingFunction(loveNum, multiplyer) {
       multiplyer = multiplyer + 1;
     };
 
-    // Increasing the value of love percentage when it is less than 50%.
-    if (firstNum < 50) {
-      firstNum = firstNum + 45;
-    };
-
     loveNum = firstNum;
+
+    // Increasing the value of love percentage when it is less than 50%.
+    if (Number(firstNum) < 50) {
+      loveNum = Number(firstNum) + 45;
+    };
   };
 
   // Showing the output
