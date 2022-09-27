@@ -16,21 +16,27 @@ function loveCalculator() {
   let loveNumber = '';
   let charCount = 0;
 
-  // Loops for getting the no. of times a particular character is coming in the loveString.
-  for (let i = 0; i < loveString.length; i++) {
-    for (let j = 0; j < loveString.length; j++) {
-      if (loveString[i] === loveString[j]) {
-        charCount = charCount + 1;
+  if (person1.value === '' || person2.value === '') {
+    output.innerHTML = "Name of any Person can't be blank";
+  }
+
+  else {
+    // Loops for getting the no. of times a particular character is coming in the loveString.
+    for (let i = 0; i < loveString.length; i++) {
+      for (let j = 0; j < loveString.length; j++) {
+        if (loveString[i] === loveString[j]) {
+          charCount = charCount + 1;
+        };
       };
+
+      // Reseting the program variables to their initial values for further analysis.
+      loveNumber = loveNumber + charCount;
+      charCount = 0;
     };
 
-    // Reseting the program variables to their initial values for further analysis.
-    loveNumber = loveNumber + charCount;
-    charCount = 0;
+    // Calculating the love percentage.
+    calculatingFunction(loveNumber, 1);
   };
-
-  // Calculating the love percentage.
-  calculatingFunction(loveNumber, 1);
 };
 
 // Logic to display the percentage calculated by the Love Calculator.
@@ -87,6 +93,8 @@ reset.addEventListener('click', () => {
   loadingGif.style.display = 'none';
   loading.style.display = 'none';
   output.style.display = 'none';
+  person1.value = '';
+  person2.value = '';
 });
 
 
