@@ -141,7 +141,9 @@ body {
 
 /* Media Queries */
 @media screen and (max-width: 900px) {
-    .person1, .person2 {
+
+    .person1,
+    .person2 {
         width: 223px;
     }
 
@@ -175,5 +177,6 @@ body {
         font-size: 34px;
         color: blue;
     }
-};
+}
 
+;

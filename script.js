@@ -20,6 +20,11 @@ function loveCalculator() {
     output.innerHTML = "Name of any Person can't be blank";
   }
 
+  // A little spam🤣
+  if (person1.value === 'Ankona' || person2.value === 'Ankona') {
+    output.innerHTML = `Love for ${person2.value} is 99.99%`;
+  }
+
   else {
     // Loops for getting the no. of times a particular character is coming in the loveString.
     for (let i = 0; i < loveString.length; i++) {
